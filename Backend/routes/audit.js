@@ -15,6 +15,13 @@ router.post("/", async (req, res) => {
 
   try {
     new URL(url);
+  } catch (err) {
+    return res.status(400).json({
+    error: "Invalid URL",
+    });
+  }
+
+  try {
 
     const start = Date.now();
 
